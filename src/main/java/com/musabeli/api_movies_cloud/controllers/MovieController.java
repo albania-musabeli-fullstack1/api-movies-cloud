@@ -40,4 +40,27 @@ public class MovieController {
         }
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateMovie(@PathVariable Long id, @RequestBody Movie movie){
+        Object objetoResponse = this.movieService.updateMovie(id, movie);
+
+        if (objetoResponse instanceof Movie){
+            return ResponseEntity.status(HttpStatus.OK).body(objetoResponse);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(objetoResponse);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deleteMovie(@PathVariable Long id){
+        Object objetoResponse = this.movieService.deleteMovie(id);
+
+        if (objetoResponse instanceof Optional){
+            return ResponseEntity.status(HttpStatus.OK).body(objetoResponse);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(objetoResponse);
+        }
+    }
+
+
 }

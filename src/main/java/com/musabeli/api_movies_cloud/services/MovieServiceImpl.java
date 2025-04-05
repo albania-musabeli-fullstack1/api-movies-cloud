@@ -41,11 +41,22 @@ public class MovieServiceImpl implements MovieService{
 
     @Override
     public Object updateMovie(Long id, Movie movie) {
-        return null;
+        Object objeto = this.findMovieById(id);
+
+        if (objeto instanceof Optional){
+            movie.setId(id);
+            return this.movieRepository.save(movie);
+        }
+        return objeto;
     }
 
     @Override
-    public Object deleteMovie(Long id, Movie movie) {
-        return null;
+    public Object deleteMovie(Long id) {
+        Object objeto = this.findMovieById(id);
+
+        if (objeto instanceof Optional){
+            this.movieRepository.deleteById(id);
+        }
+        return objeto;
     }
 }

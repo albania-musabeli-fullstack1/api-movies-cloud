@@ -15,5 +15,5 @@ public interface MovieService {
 
     Object updateMovie(Long id, Movie movie);
 
-    Object deleteMovie(Long id, Movie movie);
+    Object deleteMovie(Long id);
 }
