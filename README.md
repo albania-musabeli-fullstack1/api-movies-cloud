@@ -14,6 +14,7 @@ Api creada con Springboot para gestionar registro de películas.
 * oracle pki
 * osdt_core
 * osdt_cert
+* spring-boot-starter-hateoas
 
 ## Configurar variables de entorno para conexión a Oracle Cloud
 
@@ -40,3 +41,8 @@ nombre de usuario y password.
     "synopsis":"Historia de amor previa al hundimiento del Titanic"
 }
 ```
+
+## Actividad Formativa 5
+
+* Agregar pruebas unitarias
+* Implementar HATEOAS
