@@ -1,18 +1,17 @@
 package com.musabeli.api_movies_cloud.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Builder
 @Table(name = "movie")
-public class Movie {
+public class Movie extends RepresentationModel<Movie> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
